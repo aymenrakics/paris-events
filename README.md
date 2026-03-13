@@ -129,37 +129,6 @@ npm run dev
 
 ---
 
-## 📡 API Documentation
-
-Une fois le backend lancé, la documentation interactive est disponible sur :
-- **Swagger UI** : http://localhost:8000/docs
-- **ReDoc** : http://localhost:8000/redoc
-
-### Endpoints principaux
-
-| Méthode | Endpoint | Description |
-|---|---|---|
-| `GET` | `/api/events` | Liste des événements (avec filtres) |
-| `GET` | `/api/events/{id}` | Détail d'un événement |
-| `GET` | `/api/categories` | Liste des catégories |
-| `POST` | `/api/events/sync` | Synchronisation depuis Open Data Paris |
-| `GET` | `/api/health` | Health check |
-
-### Paramètres de recherche (`GET /api/events`)
-
-| Paramètre | Type | Description |
-|---|---|---|
-| `q` | string | Recherche textuelle |
-| `category` | string | Filtre par catégorie |
-| `date_from` | date | Date de début |
-| `date_to` | date | Date de fin |
-| `sort_by` | string | Tri : `date`, `title` |
-| `order` | string | Ordre : `asc`, `desc` |
-| `page` | int | Numéro de page (défaut: 1) |
-| `per_page` | int | Résultats par page (défaut: 20) |
-
----
-
 ## 🔮 Améliorations possibles
 
 Si j'avais plus de temps, voici ce que j'ajouterais :
