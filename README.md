@@ -15,8 +15,6 @@
 - [Architecture technique](#-architecture-technique)
 - [Stack technique](#-stack-technique)
 - [Installation et lancement](#-installation-et-lancement)
-- [API Documentation](#-api-documentation)
-- [Choix techniques et justifications](#-choix-techniques-et-justifications)
 - [Améliorations possibles](#-améliorations-possibles)
 
 ---
