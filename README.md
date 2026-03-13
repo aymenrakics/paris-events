@@ -23,6 +23,14 @@
 
 Paris Events est une application qui agrège les données d'événements culturels depuis l'**API Open Data de la Ville de Paris** et les présente dans une interface moderne et intuitive.
 
+## 🖼 Captures d'écran
+
+### Page d'accueil
+![Page d'accueil](screenshots/accueil.png)
+
+### Détail d'un événement
+![Détail](screenshots/details.png)
+
 ### Fonctionnalités
 
 - **Recherche** d'événements par mot-clé
