@@ -28,6 +28,9 @@ Paris Events est une application qui agrège les données d'événements culture
 ### Page d'accueil
 ![Page d'accueil](screenshots/accueil.png)
 
+---
+---
+
 ### Détail d'un événement
 ![Détail](screenshots/details.png)
 
