@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  # ── Backend FastAPI ─────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: paris-events-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - sqlite-data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///./data/paris_events.db
+      - DEBUG=false
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Frontend React (Nginx) ──────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: paris-events-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  sqlite-data:
