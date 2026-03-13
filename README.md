@@ -19,7 +19,7 @@
 
 ---
 
-## 🎯 Aperçu du projet
+## Aperçu du projet
 
 Paris Events est une application qui agrège les données d'événements culturels depuis l'**API Open Data de la Ville de Paris** et les présente dans une interface moderne et intuitive.
 
@@ -36,7 +36,7 @@ Paris Events est une application qui agrège les données d'événements culture
 
 ---
 
-## 🏗 Architecture technique
+## Architecture technique
 
 Le backend agit comme un **proxy intelligent** :
 1. Il récupère les données depuis l'API Open Data Paris
@@ -46,7 +46,7 @@ Le backend agit comme un **proxy intelligent** :
 
 ---
 
-## 🛠 Stack technique
+## Stack technique
 
 ### Backend
 | Technologie | Justification |
@@ -76,7 +76,7 @@ Le backend agit comme un **proxy intelligent** :
 
 ---
 
-## 🚀 Installation et lancement
+## Installation et lancement
 
 ### Option 1 : Docker (recommandé)
 
@@ -127,7 +127,7 @@ npm run dev
 
 ---
 
-## 🔮 Améliorations possibles
+## Améliorations possibles
 
 Si j'avais plus de temps, voici ce que j'ajouterais :
 
@@ -141,7 +141,7 @@ Si j'avais plus de temps, voici ce que j'ajouterais :
 
 ---
 
-## 👤 Auteur
+## Auteur
 
 **Aymen RAKI** 
 📧 aymen.raki.cs@gmail.com  
