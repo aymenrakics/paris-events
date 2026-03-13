@@ -40,27 +40,6 @@ Paris Events est une application qui agrège les données d'événements culture
 
 ## 🏗 Architecture technique
 
-```
-┌─────────────────────────────────────────────────┐
-│                   Frontend                       │
-│              React 18 + Vite                     │
-│         Tailwind CSS + Axios                     │
-│              Port : 5173                         │
-└──────────────────┬──────────────────────────────┘
-                   │ HTTP / REST
-┌──────────────────▼──────────────────────────────┐
-│                   Backend                        │
-│             FastAPI (Python)                     │
-│         SQLAlchemy + SQLite                      │
-│              Port : 8000                         │
-└──────────────────┬──────────────────────────────┘
-                   │ HTTPS
-┌──────────────────▼──────────────────────────────┐
-│          API Open Data Paris                     │
-│   opendata.paris.fr/api/explore/v2.1            │
-└─────────────────────────────────────────────────┘
-```
-
 Le backend agit comme un **proxy intelligent** :
 1. Il récupère les données depuis l'API Open Data Paris
 2. Il les normalise et les enrichit (parsing des dates, catégorisation)
@@ -181,52 +160,23 @@ Une fois le backend lancé, la documentation interactive est disponible sur :
 
 ---
 
-## 💡 Choix techniques et justifications
-
-### Pourquoi FastAPI plutôt que Flask/Django ?
-- **Performance** : Async natif, parmi les frameworks Python les plus rapides
-- **Documentation auto-générée** : Swagger/OpenAPI out-of-the-box grâce à Pydantic
-- **Validation** : Types Python + Pydantic = validation robuste sans code boilerplate
-- **Modernité** : Syntaxe async/await, type hints natifs
-
-### Pourquoi un backend proxy plutôt qu'appeler l'API Paris directement depuis le frontend ?
-- **Abstraction** : Le frontend n'a pas besoin de connaître la structure de l'API Paris
-- **Cache** : Réduction des appels à l'API externe, meilleures performances
-- **Transformation** : Normalisation et enrichissement des données
-- **Sécurité** : Pas d'exposition de clés API côté client
-- **Résilience** : Le backend peut servir les données cachées même si l'API Paris est indisponible
-
-### Pourquoi SQLite ?
-- **Zéro configuration** : Pas de serveur de base de données à installer
-- **Suffisant pour un MVP** : Performant jusqu'à des milliers d'événements
-- **Migration facile** : SQLAlchemy permet de migrer vers PostgreSQL sans changer le code métier
-
-### Pourquoi Vite plutôt que Create React App ?
-- **Vitesse** : Hot Module Replacement quasi instantané
-- **Performance** : Build optimisé avec Rollup
-- **Modernité** : CRA est officiellement déprécié
-
----
-
 ## 🔮 Améliorations possibles
 
 Si j'avais plus de temps, voici ce que j'ajouterais :
 
-1. **Carte interactive** (Leaflet/MapLibre) pour visualiser les événements géographiquement
+1. **Carte interactive** pour visualiser les événements géographiquement
 2. **Système d'authentification** pour des favoris persistants côté serveur
 3. **Notifications** push pour les nouveaux événements dans les catégories suivies
-4. **Tests E2E** avec Playwright
-5. **CI/CD** avec GitHub Actions
-6. **Migration PostgreSQL** pour la production
-7. **Recherche full-text** avec indexation avancée
-8. **PWA** pour l'utilisation offline et l'installation sur mobile
-9. **Intégration IA** : recommandations personnalisées basées sur l'historique de consultation
+4. **CI/CD** avec GitHub Actions
+5. **Migration PostgreSQL** pour la production
+6. **Recherche full-text** avec indexation avancée
+7. **Intégration IA** : recommandations personnalisées basées sur l'historique de consultation
 
 ---
 
 ## 👤 Auteur
 
-**Aymen RAKI** — Stagiaire Développeur Full-Stack & IA  
+**Aymen RAKI** 
 📧 aymen.raki.cs@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/aymen-raki)
 
